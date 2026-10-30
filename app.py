@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Load the trained spam detection model
+# LOAD THE TRAINED SPAM DETECTION MODEL
 model = joblib.load("model/spam_detector.joblib")
 
 
@@ -34,22 +34,9 @@ def create_database():
     connection.close()
 
 
-# Create the database when the application starts
+# INITIALIZE DATABASE WHEN THE APPLICATION STARTS
+# This also runs when Render starts the app using Gunicorn.
 create_database()
-
-
-# HOME PAGE AND SMS DETECTION
-@app.route("/", methods=["GET", "POST"])
-def home():
-
-
-# Create the database when the application starts
-create_database()
-
-
-# HOME PAGE AND SMS DETECTION
-@app.route("/", methods=["GET", "POST"])
-def home():
 
 
 # HOME PAGE AND SMS DETECTION
@@ -64,6 +51,7 @@ def home():
         message = request.form.get("message", "").strip()
 
         if message:
+
             prediction = model.predict([message])[0].upper()
 
             connection = get_db_connection()
@@ -83,7 +71,7 @@ def home():
             connection.commit()
             connection.close()
 
-    # Get dashboard statistics
+    # GET DASHBOARD STATISTICS
     connection = get_db_connection()
 
     stats = connection.execute("""
@@ -129,9 +117,7 @@ def about():
     return render_template("about.html")
 
 
-# RUN FLASK APPLICATION
+# RUN FLASK APPLICATION LOCALLY
 if __name__ == "__main__":
-
-    create_database()
 
     app.run(debug=True)
