@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Model | SMS Spam Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <nav class="navigation">
+            <a href="/">Home</a>
+            <a href="/history">Detection History</a>
+            <a href="/about" class="active">About Model</a>
+        </nav>
+
+        <header>
+            <h1>About the Machine Learning Model</h1>
+            <p>Learn how the SMS Spam Detection System works.</p>
+        </header>
+
+        <main class="checker">
+
+            <h2>Project Overview</h2>
+
+            <p>
+                This system uses Natural Language Processing (NLP)
+                and Machine Learning to classify SMS messages as
+                HAM (legitimate) or SPAM.
+            </p>
+
+            <br>
+
+            <h2>Dataset Information</h2>
+
+            <p><strong>Dataset:</strong> UCI SMS Spam Collection</p>
+            <p><strong>Original messages:</strong> 5,572</p>
+            <p><strong>Cleaned messages:</strong> 5,169</p>
+            <p><strong>Training records:</strong> 4,135</p>
+            <p><strong>Testing records:</strong> 1,034</p>
+
+            <br>
+
+            <h2>Text Processing</h2>
+
+            <p>
+                The system uses TF-IDF (Term Frequency-Inverse
+                Document Frequency) to convert text messages into
+                numerical features that machine learning algorithms
+                can process.
+            </p>
+
+            <p>
+                The text processing uses lowercase conversion,
+                English stop-word removal, and unigram and bigram
+                features.
+            </p>
+
+            <br>
+
+            <h2>Algorithms Tested</h2>
+
+            <ul class="model-list">
+                <li>
+                    <strong>Multinomial Naive Bayes:</strong>
+                    A probability-based algorithm used for text classification.
+                </li>
+
+                <li>
+                    <strong>Logistic Regression:</strong>
+                    A classification algorithm used to predict message categories.
+                </li>
+
+                <li>
+                    <strong>Linear Support Vector Machine (SVM):</strong>
+                    A classification algorithm that finds a decision boundary
+                    between HAM and SPAM messages.
+                </li>
+            </ul>
+
+            <br>
+
+            <h2>Model Performance Comparison</h2>
+
+            <div class="table-wrapper">
+                <table class="performance-table">
+                    <thead>
+                        <tr>
+                            <th>Algorithm</th>
+                            <th>Accuracy</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>F1-Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Naive Bayes</td>
+                            <td>95.36%</td>
+                            <td>100.00%</td>
+                            <td>63.36%</td>
+                            <td>77.57%</td>
+                        </tr>
+
+                        <tr>
+                            <td>Logistic Regression</td>
+                            <td>94.58%</td>
+                            <td>97.47%</td>
+                            <td>58.78%</td>
+                            <td>73.33%</td>
+                        </tr>
+
+                        <tr class="best-model">
+                            <td>Linear SVM</td>
+                            <td>97.87%</td>
+                            <td>95.80%</td>
+                            <td>87.02%</td>
+                            <td>91.20%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <h2>Selected Model: Linear SVM</h2>
+
+            <p>
+                Linear SVM was selected because it achieved the
+                highest spam F1-score of 91.20% among the three
+                tested algorithms.
+            </p>
+
+            <p>
+                Its test results include 898 correctly classified
+                HAM messages, 114 correctly classified SPAM messages,
+                5 HAM messages incorrectly classified as SPAM,
+                and 17 SPAM messages incorrectly classified as HAM.
+            </p>
+
+            <br>
+
+            <h2>How the System Works</h2>
+
+            <ol class="model-list">
+                <li>The user enters an SMS message.</li>
+                <li>The system receives the message.</li>
+                <li>TF-IDF converts the text into numerical features.</li>
+                <li>The trained Linear SVM model classifies the message.</li>
+                <li>The system displays HAM or SPAM.</li>
+                <li>The detection result is saved in the history database.</li>
+            </ol>
+
+        </main>
+
+        <footer>
+            <p>Powered by Machine Learning and Natural Language Processing</p>
+            <p>Introduction to Data Science | UNO-R</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+<nav class="navigation">
+    <a href="/">Home</a>
+    <a href="/history" class="active">Detection History</a>
+    <a href="/about">About Model</a>
+</nav>
+        <header>
+            <h1>Detection History</h1>
+            <p>Previously checked SMS messages and their results.</p>
+        </header>
+
+        <main class="checker">
+
+            <h2>Message Records</h2>
+
+            <a href="/" class="back-link">Back to Message Checker</a>
+
+            {% if records %}
+
+                <div class="history-list">
+
+                    {% for record in records %}
+
+                        <div class="history-item">
+
+                            <p class="history-message">
+                                {{ record.message }}
+                            </p>
+
+                            <span class="history-result {{ record.prediction|lower }}">
+                                {{ record.prediction }}
+                            </span>
+
+                            <p class="history-date">
+                                Checked: {{ record.date_checked }}
+                            </p>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p class="empty-history">
+                    No detection history yet. Check an SMS message first.
+                </p>
+
+            {% endif %}
+
+        </main>
+
+        <footer>
+            <p>SMS Spam Detection System | UNO-R</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

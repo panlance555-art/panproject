@@ -1,0 +1,405 @@
+
+/* ==============================
+   GENERAL PAGE DESIGN
+============================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f6fa;
+    color: #263445;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* ==============================
+   NAVIGATION
+============================== */
+
+.navigation {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #dce3ec;
+    padding-bottom: 15px;
+}
+
+.navigation a {
+    padding: 10px 18px;
+    color: #244d7c;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.navigation a.active {
+    background-color: #142d4e;
+    color: white;
+}
+
+.navigation a:hover {
+    background-color: #dce6f1;
+}
+
+/* ==============================
+   HEADER
+============================== */
+
+header {
+    margin-bottom: 25px;
+}
+
+header h1 {
+    color: #142d4e;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #718096;
+    font-size: 15px;
+}
+
+/* ==============================
+   MAIN CHECKER CARD
+============================== */
+
+.checker {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(20, 45, 78, 0.06);
+}
+
+.checker h2 {
+    color: #142d4e;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #718096;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+/* ==============================
+   DASHBOARD SUMMARY
+============================== */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: #edf2f7;
+    padding: 22px 15px;
+    border-radius: 10px;
+    border: 1px solid #d5deea;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(20, 45, 78, 0.05);
+    transition: 0.2s;
+}
+
+.stat-card:hover {
+    background-color: #e2eaf4;
+    transform: translateY(-3px);
+}
+
+.stat-card h3 {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    color: #142d4e;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/* ==============================
+   MESSAGE TEXTAREA
+============================== */
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #263445;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #244d7c;
+    box-shadow: 0 0 0 3px rgba(36, 77, 124, 0.10);
+}
+
+textarea::placeholder {
+    color: #a0aec0;
+}
+
+/* ==============================
+   CHARACTER COUNTER
+============================== */
+
+.input-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    color: #718096;
+    font-size: 13px;
+}
+
+/* ==============================
+   BUTTON GROUP
+============================== */
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.button-group button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.check-button {
+    flex: 2;
+    background-color: #142d4e;
+    color: white;
+}
+
+.check-button:hover {
+    background-color: #244d7c;
+}
+
+.clear-button {
+    flex: 1;
+    background-color: #e2e8f0;
+    color: #263445;
+}
+
+.clear-button:hover {
+    background-color: #cbd5e0;
+}
+
+/* ==============================
+   DETECTION RESULT
+============================== */
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 9px;
+    border: 1px solid;
+}
+
+.result h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.result p {
+    font-size: 14px;
+}
+
+.result.spam {
+    background-color: #fff0f0;
+    border-color: #f5b5b5;
+    color: #b42318;
+}
+
+.result.ham {
+    background-color: #eaf7ef;
+    border-color: #a9dfbd;
+    color: #187a43;
+}
+
+/* ==============================
+   HISTORY PAGE
+============================== */
+
+.back-link {
+    display: inline-block;
+    margin: 10px 0 20px;
+    color: #244d7c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.history-item {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+}
+
+.history-message {
+    color: #263445;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.history-result {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.history-result.spam {
+    background-color: #fff0f0;
+    color: #b42318;
+}
+
+.history-result.ham {
+    background-color: #eaf7ef;
+    color: #187a43;
+}
+
+.history-date {
+    margin-top: 10px;
+    color: #718096;
+    font-size: 12px;
+}
+
+.empty-history {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 8px;
+    color: #718096;
+    text-align: center;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    padding: 20px;
+    color: #718096;
+    font-size: 13px;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN
+============================== */
+
+@media (max-width: 600px) {
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .checker {
+        padding: 18px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+}
+/* ==============================
+   ABOUT MODEL PAGE
+============================== */
+
+.model-list {
+    padding-left: 25px;
+    margin-top: 12px;
+}
+
+.model-list li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+.performance-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 14px;
+}
+
+.performance-table th,
+.performance-table td {
+    padding: 13px;
+    border: 1px solid #dce3ec;
+    text-align: center;
+}
+
+.performance-table th {
+    background-color: #142d4e;
+    color: white;
+}
+
+.performance-table tr:nth-child(even) {
+    background-color: #f3f6fa;
+}
+
+.performance-table .best-model {
+    background-color: #dce6f1;
+    font-weight: bold;
+}
