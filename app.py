@@ -34,6 +34,24 @@ def create_database():
     connection.close()
 
 
+# Create the database when the application starts
+create_database()
+
+
+# HOME PAGE AND SMS DETECTION
+@app.route("/", methods=["GET", "POST"])
+def home():
+
+
+# Create the database when the application starts
+create_database()
+
+
+# HOME PAGE AND SMS DETECTION
+@app.route("/", methods=["GET", "POST"])
+def home():
+
+
 # HOME PAGE AND SMS DETECTION
 @app.route("/", methods=["GET", "POST"])
 def home():
